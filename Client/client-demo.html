@@ -1,9 +1,22 @@
 <html>
     <head>
-            <script src="./scripts/jquery-3.1.0.min.js" type="text/javascript" />
-            <script src="./scripts/client.js" type="text/javascript" />
+            <script src="./scripts/jquery-3.1.0.min.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                $(document).ready(function () { 
+                    $('#txtStart').val(new Date().getTime());
+                    for(var i = 0;i < 1000; i++){
+                        $.get("this.html", function(data, status){});
+                    }
+                    $('#txtStop').val(new Date().getTime());
+
+                    $('#txtDifference').val($('#txtStop').val() - $('#txtStart').val());
+
+                });
+            </script>
     </head>
     <body>
-            
+        <input type="text" id="txtStart" />
+        <input type="text" id="txtStop" />
+        <input type="text" id="txtDifference" />
     </body>
 </html>

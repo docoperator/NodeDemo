@@ -1,13 +1,18 @@
 var http = require('http');
 var fs = require('fs');
 var path = require('path');
+var count = 0;
 
 http.createServer(function (request, response) {
-    console.log('request starting...');
+    console.log(count++);
 
-    var filePath = './demo-4/' + request.url;
-    if (filePath == './demo-4//')
-        filePath = './demo-4/index.html';
+    var filePath = './demo-5/' + request.url;
+    if (filePath == './demo-5//'){
+        filePath = './demo-5/index.html';
+    }
+    if (filePath == './demo-5//client-demo.html'){
+        filePath = './client/client-demo.html';
+    }
 
     var extname = path.extname(filePath);
     var contentType = 'text/html';
